@@ -1,0 +1,18 @@
+readChannelID = 1983388; 
+
+bottleFieldID = 2; 
+
+readAPIKey = 'L4ZVKYOHK06LDKAQ'; 
+
+   
+[number,timeStamp] = thingSpeakRead(readChannelID,'Fields',bottleFieldID, ...
+                                                'numDays',1,'ReadKey',readAPIKey); 
+
+[maxN,maxNIndex] = max(number); 
+[minN,minNpIndex] = min(number);
+
+timeMaxTemp = timeStamp(maxTempIndex); 
+timeMinTemp = timeStamp(minTempIndex); 
+   
+display(maxN,'Maximum number of bottle for the past 24 hours is'); 
+display(minN,'Minimum number of bottle for the past 24 hours is'); 
